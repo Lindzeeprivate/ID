@@ -104,6 +104,12 @@
             color: red;
             display: none;
         }
+        .connected-message {
+            color: green;
+            font-weight: bold;
+            display: none;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
@@ -131,7 +137,8 @@
             <p>Fan Status: Private 3 of 5</p>
             <p>Contact Preference: Phone - 512*****18</p>
         </div>
-        <button>Connect</button>
+        <button onclick="connect()">Connect</button>
+        <p id="connected-message" class="connected-message">ID FULLY CONNECTED TO LINDZEE</p>
     </div>
 
     <script>
@@ -160,6 +167,11 @@
                 errorMessage.innerText = 'Incorrect username';
                 errorMessage.style.display = 'block';
             }
+        }
+
+        function connect() {
+            const connectedMessage = document.getElementById('connected-message');
+            connectedMessage.style.display = 'block';
         }
     </script>
 </body>
